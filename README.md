@@ -1,1 +1,2 @@
-# Data_visualization using Visual Studio Code_Data Science_Fall 2021
+# Data_visualization using Visual Studio Code
+Data Science_Fall 2021
