@@ -8,12 +8,7 @@
 
    <body>
     <script>
-        //you need to pay atteion to how to read csv, in local file, it does't work. 
-        //but in github it works when you click "raw" to see your data
-        //Make sure you're using the latest version of D3 Also if you're confused about CORS, 
-        //try to upload your data file to Github GIST and use the raw URL to the CSV data file. 
-        //Or if your data is in a different server you can try this https://cors-anywhere.herokuapp.com/ followed by your data/csv URL.
-        //See example using your code and gist here
+ 
        d3.csv('https://raw.githubusercontent.com/ivaleehan/D3Data/main/data.csv').then(function(data){
            var canvas = d3.select('body').append('svg')
            .attr('width', 1000)
