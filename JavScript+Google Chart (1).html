@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawSeriesChart);
+
+    function drawSeriesChart() {
+
+      var data = google.visualization.arrayToDataTable([
+        ['ID', 'Murder Rate', 'Bulgary Rate', 'Robbery Rate',          'Population'],
+        ['ALB',    8.2,              953.8,      'High (100-150)',          4627851],
+        ['ALA',    4.8,              622.5,      'Medium (50-100)',         686293],
+        ['ARI',    7.5,              948.4,      'High (100-150)',         6500180],
+        ['ARK',    6.7,              1084.6,      'Medium (50-100)',       2855390],
+        ['CAL',    6.9,              693.3,       'Very High (>150)',     36756666],
+        ['COL',    3.7,              744.8,       'Medium (50-100)',       4861515],
+        ['CON',    2.9,              437.1,      'High (100-150)',         3501252],
+        ['DEL',    4.4,              688.9,      'Very High (>150)',        873092],
+        ['FLO',    5,                926.3,      'Very High (>150)',      18328340],
+        ['GEO',    6.2,              931,         'Very High (>150)',      9685744],
+        ['HAW',    1.9,              767.9,      'Low (0-50)',             1288198],
+        ['IDA',    2.4,              564.4,      'Low (0-50)',             1523816],
+        ['ILL',    6,                606.9,      'Very High (>150)',      12901563],
+        ['IND',    5.7,              697.6,      'High (100-150)',         6376792],
+        ['IOW',    1.3,              606.4,      'Low (0-50)',             3002555],
+        ['KAN',    3.7,              689.2,      'Medium (50-100)',        2802134],
+        ['KEN',    4.6,              634,        'Medium (50-100)',        4269245],
+        ['LOU',    9.9,              870.6,      'Medium (50-100)',        4410796],
+      ]);
+
+      var options = {
+        title: 'Correlation between robbery rate to murder and bulgary rate ' +
+               'with respect of population size in States, USA (2010)',
+        hAxis: {title: 'Bulgary Rate'},
+        vAxis: {title: 'Murder Rate'},
+        bubble: {textStyle: {fontSize: 11}}
+      };
+
+      var chart = new google.visualization.BubbleChart(document.getElementById('my test'));
+      chart.draw(data, options);
+    }
+    </script>
+  </head>
+  <body>
+    <div id="my test" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>

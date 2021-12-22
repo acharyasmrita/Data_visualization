@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
+   
+    <script>
+      google.charts.load('current', {
+   
+       callback: function () {
+         $.get("https://raw.githubusercontent.com/ivaleehan/D3Data/main/example1.csv", function(csvString) {
+         var arrayData = $.csv.toArrays(csvString, {onParseValue: $.csv.hooks.castToScalar});
+   
+         var data = new google.visualization.arrayToDataTable(arrayData);
+   
+         var options = {
+           title: 'Correlation between life expectancy, fertility rate ' +
+               'and population of some world countries (2010)',
+               hAxis: {title: 'Life Expectancy'},
+               vAxis: {title: 'Fertility Rate'},
+               bubble: {textStyle: {fontSize: 11}}
+              };
+         var chart = new google.visualization.BubbleChart(document.getElementById('series_chart_div'));
+      chart.draw(data, options);
+       });
+     },
+     packages: ['corechart']
+   });
+       </script>
+
+
+     </head>
+  <body>
+    <div id="series_chart_div" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>
